@@ -45,10 +45,10 @@ class Gyroscope : public Sensor {
 public:
     // Gyroscope data collection
     void gatherData() override {
-        cout << "Gathering data from Angle of Attack Probe Sensor..." << endl;
+        cout << "Gathering data from Gyroscope Sensor..." << endl;
     }
     // Gyroscope data processing
     void processData() override {
-        cout << "Processing data from Angle of Attack Probe Sensor..." << endl;
+        cout << "Processing data from Gyroscope Sensor..." << endl;
     }
 };
