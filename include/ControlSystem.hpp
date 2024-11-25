@@ -12,7 +12,7 @@ public:
         sensors.push_back(move(sensor));
     }
     
-    // Function to gather and process sensor data
+    // Function to gather and process sensor data, then make adjustments based on the data
     void monitorAndAdjust() {
         for (auto& sensor : sensors) {
             // Set up for data collection
