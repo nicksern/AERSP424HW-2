@@ -9,11 +9,10 @@ set(CMAKE_CXX_STANDARD 20)
 
 # Including header files directory
 include_directories(include)
-include_directories(src)
 
 # Executables for each of the standalone main functions
-add_executable(Header Include/Sensor.hpp Include/SensorFactory.hpp Include/ControlSysten.hpp)
-add_executable(Source src/Main.cpp)
+add_executable(Header include/Sensor.hpp include/SensorFactory.hpp include/ControlSysten.hpp)
+add_executable(Source src/Problem1.cpp)
 
 
 # Since no libraries, no target links
