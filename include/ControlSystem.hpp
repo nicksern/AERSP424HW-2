@@ -4,23 +4,29 @@
 // AerospaceControlSystem class
 class AerospaceControlSystem {
 private:
-    // Setting up sensor pointer via a vector
     vector<unique_ptr<Sensor>> sensors;
 public:
-    // Function to add sensor using its pointer
+    // Function to create the sensor
     void addSensor(unique_ptr<Sensor> sensor) {
         sensors.push_back(move(sensor));
     }
     
-    // Function to gather and process sensor data, then make adjustments based on the data
+    // Function to indicate we are adjusting controls based on sensor data
     void monitorAndAdjust() {
         for (auto& sensor : sensors) {
-            // Set up for data collection
+            // Calling function to gather sensor data
             sensor->gatherData();
-            // Set up for data processing
+            // Calling function to process sensor data
             sensor->processData();
-            // Output statement showing the system is adjusting based on sensor data
+            // Output message for adjusting controls
             cout << "Adjusting controls based on sensor data." << endl;
+        }
+    }
+
+    ~AerospaceControlSystem() {
+        for (auto& sensor : sensors) {
+            // Output message that the sensor has been deleted
+            cout << "Sensor deleted (" << sensor.get() << ") of type \"" << sensor->getType() << "\"" << endl;
         }
     }
 };

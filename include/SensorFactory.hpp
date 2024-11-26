@@ -4,16 +4,28 @@
 class SensorFactory {
 public:
     static unique_ptr<Sensor> createSensor(const string& sensorType) {
-        // Setting pointer for altimeter sensor string
+        // If sensor is an altimeter
         if (sensorType == "Altimeter") {
-            return make_unique<Altimeter>();
-        // Setting pointer for pitot tube sensor string
+            // Calling to obtain altimeter sensor address
+            auto sensor = make_unique<Altimeter>();
+            // Output message of altimeter sensor creation and obtaining its name as a string
+            cout << "Sensor created (" << sensor.get() << ") of type \"" << sensor->getType() << "\"" << endl;
+            return sensor;
+        // If sensor is a pitot tube
         } else if (sensorType == "PitotTube") {
-            return make_unique<PitotTube>();
-        // Setting pointer for gyroscope sensor string
+            // Calling to obtain pitot tube address
+            auto sensor = make_unique<PitotTube>();
+            // Output message of pitot tube sensor creation and obtaining its name as a string
+            cout << "Sensor created (" << sensor.get() << ") of type \"" << sensor->getType() << "\"" << endl;
+            return sensor;
+        // If sensor is a gyroscope
         } else if (sensorType == "Gyroscope") {
-            return make_unique<Gyroscope>();
-        // If not sensor string is provided return a null pointer
+            // Calling to obtain gyroscope address
+            auto sensor = make_unique<Gyroscope>();
+            // Output message of gyroscope sensor creation and obtaining its name as a string
+            cout << "Sensor created (" << sensor.get() << ") of type \"" << sensor->getType() << "\"" << endl;
+            return sensor;
+        // Else statement to return a null pointer if none of the three sensor types are indicated
         } else {
             return nullptr;
         }

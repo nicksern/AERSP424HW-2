@@ -1,5 +1,6 @@
 #include<iostream>
 #include<memory>
+#include<string>
 using namespace std;
 
 
@@ -12,6 +13,8 @@ public:
     virtual void gatherData() = 0;
     // Virtual data processing
     virtual void processData() = 0;
+    // Virtual function to get the sensor name as a string
+    virtual string getType() = 0; 
 };
 
 // Derived class for an aircraft altimeter
@@ -25,6 +28,8 @@ public:
     void processData() override {
         cout << "Processing data from Altimeter Sensor..." << endl;
     }
+    // Function to return altimeter sensor name as a string
+    string getType() override { return "Altimeter"; }
 };
 
 // Derived class for an aircraft pitot tube
@@ -38,6 +43,8 @@ public:
     void processData() override {
         cout << "Processing data from Pitot Tube Sensor..." << endl;
     }
+    // Function to return pitot tube sensor name as a string
+    string getType() override { return "Pitot Tube"; }
 };
 
 // Derived class for an aircraft gyroscope
@@ -51,4 +58,6 @@ public:
     void processData() override {
         cout << "Processing data from Gyroscope Sensor..." << endl;
     }
+    // Function to return gyroscope sensor name as a string
+    string getType() override { return "Gyroscope"; }
 };
