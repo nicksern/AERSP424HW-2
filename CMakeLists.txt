@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Add include directory
-include_directories(include)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # Find all source files in the 'src' folder
 file(GLOB_RECURSE SOURCES "src/*.cpp")
