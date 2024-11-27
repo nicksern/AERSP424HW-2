@@ -1,19 +1,25 @@
-cmake_minimum_required(VERSION 3.23)
-project(AERSP424_HW1)
-set(CMAKE_CXX_STANDARD 20)
+cmake_minimum_required(VERSION 3.10)
+project(MyProject)
 
-# No need for a library because we duplicated problems within each other allowing files to be run individually. 
-# This, for the purposes of the assignment, isolates any potential compilation errors 
-# .hpp files are automatically linked regardless, using include commands
-# add_library()
+# Set C++ standard (adjust as needed)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Including header files directory
+# Add include directory
 include_directories(include)
 
-# Executables for each of the standalone main functions
-add_executable(Header include/Sensor.hpp include/SensorFactory.hpp include/ControlSysten.hpp)
-add_executable(Source src/Problem1.cpp)
+# Find all source files in the 'src' folder
+file(GLOB_RECURSE SOURCES "src/*.cpp")
 
+# Add the executable (change 'main' to your main source file's name if different)
+add_executable(MyProject ${Problem1})
+add_executable(MyProject ${Problem2})
+add_executable(MyProject ${Problem3})
+add_executable(MyProject ${Problem4})
 
-# Since no libraries, no target links
-# target_link_libraries(Q )
+# Find and link Matplot++ (assuming it's installed system-wide)
+find_package(Matplot++ REQUIRED)
+target_link_libraries(MyProject Matplot++::matplot)
+
+# Optional: Compiler/linker flags (if needed)
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
