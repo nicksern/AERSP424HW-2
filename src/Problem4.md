@@ -1,6 +1,8 @@
 # Problem 4
 For problem 04, we've developed an N-Body simulator with soft collisions. 
 
+Unfortunately, we were unable to figure out how to get rid of the flickering in the 3D plot. The animation only plays for two cycles.
+
 ## Background
 
 The original code, which was made in MATLAB, was developed by Melik Demirel. The `NBodySim.m` file, found in `/references/` is the original code for this program. 
