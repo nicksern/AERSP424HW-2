@@ -4,6 +4,7 @@
 #include "ControlSystem.hpp"
 #include "Sensor.hpp"
 #include "SensorFactory.hpp"
+using namespace std;
 
 // Problem 1 function to be run in Main
 void runProblem1() {
